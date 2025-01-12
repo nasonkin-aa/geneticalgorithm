@@ -84,7 +84,7 @@ class GeneticAlgorithm:
 
     def step(self):
         best_fit = None
-        for k in range(2):
+        for k in range(200):
 
             # отбор
             fit_list = self.evaluation()# список пар (значение функции приспособленности, особь)
@@ -143,7 +143,7 @@ def read_input_file(file_path):
 file_path = 'input.txt'
 
 N, category, time, M, ceofs = read_input_file(file_path)
-ga = GeneticAlgorithm(250, N, M, category, time, ceofs)
+ga = GeneticAlgorithm(150, N, M, category, time, ceofs)
 
 res = ga.step()
 answ = [i + 1 for i in res[1]]
